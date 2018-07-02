@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+	<title>属性的简洁表示</title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+	'use strict';
+	let a = "aa",b = "bb";
+	let obj={
+		a: 'aaaaa',
+		[a]: 'AAA', // 一种简洁的表达方式，属性名是变量a
+		[a + b]: 'A+B', // 一种简洁的表达方式，属性名是变量a+b,
+		fn: funtion(){}, // 可以简写为fn1的形式
+		fn1(){}
+	};
+	console.log(obj.a); // aaaaa
+	console.log(obj["a"]); // aaaaa
+	console.log(obj[a]); // AAA
+	console.log(obj); // {a: "aaaaa", aa: "AAA", aabb: "A+B"}
+</script>

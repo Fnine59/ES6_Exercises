@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+	<title>Map</title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+	'use strict';
+	var map1 = new Map([ [1,"a"], ["a", "A"], [{name:"test"},"test"], [/\d+/, "正则"] ]);
+	console.log(map1);
+
+	console.log(map1.get("a")); // A
+
+	map1.set(2,"js");
+	console.log(map1);
+
+	// 将数组变成map
+	// 1 => [1]
+	// 2 => [1, 2]
+	// 3 => [1, 2, 3]
+	let ary = [1, 2, 3, 4, 5 ,6];
+	let map = new Map();
+	ary.forEach((item, index)=>{
+		map.set(index+1, ary.slice(0, index+1));
+	});
+	console.log(map);
+
+	map.forEach((val, key, map)=>{
+		// val：值
+		// key：键
+		// map：原map实例
+	});
+
+	for(var key of map.keys()){
+		// key：键
+	}
+	for (var val of map.values()){
+		// val：值
+	}
+	for(var [key, val] of map.entries()){
+		// val：值
+		// key：键
+	}
+</script>

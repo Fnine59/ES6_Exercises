@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+	<title>Set原型上的方法</title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+	'use strict';
+	let set = new Set([1, 2, 3, 4, 1, 2]);
+	console.log(set);
+	console.log(set.add(5).add(4)); // {1, 2, 3, 4, 5}
+
+	console.log(set.has(1)); // true
+	console.log(set.delete(1)); // true
+
+	console.log(set.clear()); // undefined
+	console.log(set); // Set(0) {}
+
+	// 求两个数组的并集
+	let arr1 = [1, 2, 3, 4, 5, 6], arr2 = [2, 4, 6, 8, 10];
+	function bingji(arr1, arr2){
+		return [...new Set([...arr1,...arr2])];
+	}
+	console.log(bingji(arr1, arr2)); // [1, 2, 3, 4, 5, 6, 8, 10]
+
+	// 求两个数组的交集
+	function jiaoji(arr1, arr2){
+		return arr1.filter((item)=>{
+			return arr2.includes(item);
+		});
+	}
+	console.log(jiaoji(arr1, arr2)); // [2, 4, 6]
+
+	// 求两个数组的差集
+	function chaji(arr1, arr2){
+		return bingji(arr1, arr2).filter((item)=>{
+			return !jiaoji(arr1, arr2).includes(item);
+		});
+	};
+	console.log(chaji(arr1, arr2)); // [1, 3, 5, 8, 10]
+
+</script>
