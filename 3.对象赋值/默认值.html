@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+	<title>默认值</title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+	'use strict';
+	let obj = {y:2};
+	// let {x, y} = obj;
+	// console.log(x, y); // undefined 2
+
+	/*let {x=1, y} = obj;
+	console.log(x, y);// 1*/
+
+	/*let {y: n} = {};
+	console.log(n);// undefined
+
+	let {y: m=1} = {};
+	console.log(m); // 1*/
+
+	/*let {a: cc=22} = {a: 12};
+	console.log(cc); // 12*/
+
+	/*let {v=3} = {v: undefined};
+	console.log(v); // 3
+
+	let {v=3} = {v: null};
+	console.log(v); // null*/
+
+	let {f: {b}} = {b: 'aa'};
+	console.log(b); // Cannot destructure property `b` of 'undefined' or 'null'.
+</script>

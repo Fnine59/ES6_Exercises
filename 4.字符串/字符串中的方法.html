@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+	<title>字符串中的方法</title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+	'use strict';
+	let str = 'adfjlkfjsdll';
+	console.log(str.includes('a')); // true
+	console.log(str.includes('a',2)); // false
+
+	console.log(str.startsWith('a')); // true
+	console.log(str.endsWith('f')); // false 
+	console.log(str.startsWith('f',2)); // true
+
+	console.log(str.repeat(2), str);//adfjlkfjsdlladfjlkfjsdll adfjlkfjsdll
+	
+	//小数会向下取整
+	console.log(str.repeat(2.6));//adfjlkfjsdlladfjlkfjsdll
+
+	//负数和Infinity会报错
+	// console.log(str.repeat(-2));
+	// console.log(str.repeat(Infinity));
+
+	//0到-1之间的小数会先向下取整，得到0，因此返回空串
+	console.log(str.repeat(-0.3));//''
+	//NaN 也就相当于0次
+	console.log(str.repeat(NaN));//''
+
+	//其他数据类型，会先转换为数字类型
+	console.log(str.repeat("2"));//adfjlkfjsdlladfjlkfjsdll
+</script>

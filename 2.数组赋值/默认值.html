@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+	<title>默认值</title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+	'use strict';
+	// let [f0, f1] = [1];
+	// console.log(f0, f1);// 1 undefined
+
+	// let [f2, f3=2] = [1];
+	// console.log(f2, f3);// 1 2
+
+	//判断一个位置是否有值是按照三等号判断严格相等。如果数组中成员不严格等于undefined则默认值不会生效。
+	/*let [f=1] = [undefined];
+	let [f5=1] = [null]; 
+	console.log(f, f5);// 1 null*/
+
+	function fn(){
+		console.log('触发了fn函数');
+	}
+	let [x=fn(),y=0] = [1];
+	console.log(x);
+</script>

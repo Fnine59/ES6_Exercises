@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+	<title>参数作用域</title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+	'use strict';
+	let n=10, m=20;
+	function fn1(x=n, y=m){
+		let n=1, m=2;
+		console.log(x, y);
+	}
+	fn1(); // 10 20
+
+	let x = 10;
+	function fn2(x=1, y=x){
+		console.log(x, y);
+	}
+	fn2(); // 1 1
+</script>

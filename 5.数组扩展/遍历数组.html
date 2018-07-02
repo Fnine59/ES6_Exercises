@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+	<title>遍历数组</title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+	'use strict';
+	let ary = [1, 2, 3, 4, 5];
+	// for-in循环默认遍历键值，通常用于对象来取得对象的属性名
+	for (var key in ary){
+		console.log("索引 " + key);
+	}
+	// 对于数组，使用for-of循环比较好
+	for (let item of ary){
+		console.log("当前项 " + item);
+	}
+
+	// 如果想用for-of循环取得索引值
+	for (let key of ary.keys()){
+		console.log(key);
+	}
+
+	// 如果索引值和当前项都想取得
+	for (let entry of ary.entries()){
+		console.log(entry); // 这里返回的entry是一个数组，第一个值是索引第二个值是当前项
+	}
+
+	//使用数组解析变量接收entries返回的值
+	for (let [key, value] of ary.entries()){
+		console.log(key, value);
+	}
+</script>

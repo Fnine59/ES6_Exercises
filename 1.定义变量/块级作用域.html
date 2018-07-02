@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+	<title>块级作用域</title>
+</head>
+<body>
+<ul>
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+</ul>
+</body>
+</html>
+<script type="text/javascript">
+	let a = 10;
+	if(a){
+		let a = 1;
+		console.log(a); //1
+	}
+
+	let oLis = document.getElementsByTagName("li");
+	/*for(var i=0; i<oLis.length; i++){
+		oLis[i].onclick = function(){
+			console.log(i); // 这里每次点击输出的都是4
+		}
+	}*/
+
+	for(let i=0; i<oLis.length; i++){
+		oLis[i].onclick = function(){
+			console.log(i); // 这里输出的就是当前li的索引
+		}
+	}
+
+	let b = 100;
+	function fn(){
+		console.log(b); // 100
+	}
+	fn();
+
+	// 自执行函数
+	{
+		let c = 500;
+		console.log(c); // 500
+	}
+
+	let obj = {
+		test:100,
+	};
+
+	eval(obj);
+</script>

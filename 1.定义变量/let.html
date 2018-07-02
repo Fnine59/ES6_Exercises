@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+	<title>let的使用</title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+	'use strict';
+	console.log(a); // undefined，只声明未定义
+	var a = 1;
+	console.log(a); // 1
+
+	// console.log(b);	//b is not defined at let.html:16
+	let b = 2;
+	console.log(b); // 1
+
+	function fn(){
+		console.log(c); // c is not defined at fn (let.html:22)
+		let c = 3;
+	}
+	// fn();
+	
+	var d = 12;
+	var d = 13;
+	function d(){
+		console.log(d);
+	}
+	console.log(d);
+	// d(); // d is not a function
+	
+	let e = 12;
+	// let e = 13; //Identifier 'e' has already been declared
+	// function e(){} //Identifier 'e' has already been declared
+	// console.log(e); //Identifier 'e' has already been declared
+	
+	console.log(A);
+	let A = 20;
+	let A = 30; //Identifier 'A' has already been declared
+</script>

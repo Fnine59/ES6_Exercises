@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+	<title>扩展运算符</title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+	'use strict';
+	let ary = [1, 2, 3];
+	console.log(...ary); // 1 2 3
+
+	let str = "12345";
+	console.log([...str]); //["1", "2", "3", "4", "5"]
+
+	function fn1(){
+		return [...arguments].sort();
+	}
+	console.log(fn1(1, 5, 6, 4, 2, 3)); // [1, 2, 3, 4, 5, 6]
+
+	// 应用
+	// 求最大值的方法
+	let ary1 = [23, 52, 35.2, 562, 11, 49];
+	// 求最大值通常使用Math.max方法，但max方法不能接收数组作参数，因此通常用以下两种方式来使用
+	// 使用eval函数
+	console.log(eval("Math.max(" + ary1 + ")")); //562
+
+	// 使用apply方法
+	console.log(Math.max.apply(null, ary1));//562
+
+	//现在可以使用扩展运算符来直接转化数组
+	console.log(Math.max(...ary1)); // 562
+
+	// 实现数组的拼接
+	let a1 = [1, 2, 3], a2 = [4, 5, 6];
+	console.log(a1.concat(a2));//[1, 2, 3, 4, 5, 6]
+	console.log([...a1,...a2]);//[1, 2, 3, 4, 5, 6]
+
+
+	
+</script>

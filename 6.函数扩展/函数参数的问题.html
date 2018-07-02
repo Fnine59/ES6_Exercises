@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+	<title>函数参数的问题</title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+	'use strict';
+	// 函数是可以有默认值的
+	/*function fn1(x="x", y){
+		console.log(x, y);
+	}
+	fn1(1, 2); // 1 2
+
+	function fn2({x=0, y=0} = {}){
+		return {x,y};
+	}
+	console.log(fn2());// {x: 0, y: 0}
+	console.log(fn2({x:1})); // {x: 1, y: 0}
+
+	function fn3({x,y} = {x: 0, y: 0}){
+		return {x,y};
+	}
+	console.log(fn3());// {x: 0, y: 0}
+	console.log(fn3({x:1})); // {x: 1, y: undefined}
+*/
+	/*function fn4(x, y=2, z){
+		console.log(x,y,z);
+	}	
+	// fn4(1,,2); //这样写会报错*/
+
+	//参数集合
+	function fn5(){
+		//arguments.length表示实参的长度
+		console.log(arguments.length); // 5
+	}
+	fn5(1, 2, 3, 4, 5);
+
+	//没有默认值时，函数.length表示形参的长度
+	function fn6(x, y, z){}
+	fn6();
+	console.log(fn6.length); // 3
+
+	//有默认值时，表示默认值的位置
+	function fn7(x, y=2, z){}
+	fn7();
+	console.log(fn7.length); // 1
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+	<title>数组中的空位</title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+	'use strict';
+	let ary1 = Array(3); // 3个空位
+	let ary2 = [undefined, undefined, undefined];
+
+	console.log(1 in ary1); // false，说明数组中不存在键1
+	console.log(1 in ary2); // true，说明数组中存在键1
+	console.log(ary1, ary2); // 空位是没有键值的，只有length属性。undefined有键值，键为对应的数字，值为undefined。
+
+	var ary3 = [1,,,2,,];
+	console.log(ary3.length); // 5，注意最后一个逗号后边没有内容了
+	//es5中对空位的处理不太一致，有的方法会跳过空位而有的不会
+	//forEach方法会跳过空位
+	ary3.forEach(function(item) {
+		console.log(item);
+	}); // 1 2
+	//map方法不会跳过空位
+	console.log(ary3.map(function(item) {
+		return item;
+	})); // [1, empty × 2, 2, empty]
+
+	//ES6中对空位的处理统一了，对所有的空位都会处理为undefined，不会跳过
+	ary3.find(function(item){
+		console.log(item);
+	}); // 1 undefined undefined 2 undefined
+</script>

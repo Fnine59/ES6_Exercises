@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+	<title>模板字符串</title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+	'use strict';
+	let str = 'hello es6';
+	document.body.innerHTML = `<h2>${str}</h2>`;
+
+	//保留字符串格式
+	//es5中想要输出换行
+	console.log('hello\nworld');
+	//es6中反引号引起来的部分可以直接保留格式
+	let s = `test
+	enter br
+	!
+	`
+	console.log(s);
+	/*
+		打印出来的值如下，保留了换行和空格
+		test
+			enter br
+			!
+	 */
+	
+	//要输出反引号
+	let s1 = `test\`output`;
+	console.log(s1);// test`output
+
+	let x = 1;
+	let y = 3;
+	let s2 = `${x} + ${y} = ${x+y}`;
+	console.log(s2);
+
+	function fn(){
+		return "xxx";
+	}
+	let s3 = `函数fn输出的结果是${fn()}`;
+	console.log(s3);//函数fn输出的结果是xxx
+
+	function fn1(name){
+		return name;
+	}
+	let name = 'test';
+	let s4 = `函数fn1输出的结果是${fn1(name)}`;
+	console.log(s4);//函数fn1输出的结果是test
+
+	let s5 = 'return ' + '`Hello ${wd}`';
+	let fun = new Function('wd', s5);
+	console.log(fun('test!')); //Hello test!
+</script>

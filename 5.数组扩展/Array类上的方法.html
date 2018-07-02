@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+	<title>Array类上的方法</title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+	'use strict';
+	// Array()方法，将传进来的值转换为数组返回
+	// 注意，只传一个参数的时候返回的是数组的长度
+	console.log(Array(1, 2, 3)); // [1, 2, 3]
+	console.log(Array(4)); // [empty * 4]
+	console.log(Array.of(4)); // [4]
+
+	let ary = [1, 2, 3, 4];
+	let newAry = Array.from(ary);
+	console.log(newAry);
+
+	function toArray(){
+		return Array.from(arguments);
+	}
+	console.log(toArray(1, 2, 3, 4));
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+	<title>其他问题</title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+	'use strict';
+	/*let {x,y} = 1;
+	console.log(x, y); // undefined undefined
+	//实际进行的转化过程如下：
+	console.log(Object(1)); // {__proto__: Number}
+	let {__proto__} = 1;
+	console.log(__proto__); //Number对象*/
+
+	/*let {x,y} = [1, 2];
+	console.log(x, y); // undefined undefined
+
+	let {length,__proto__} = [1, 2];
+	console.log(length, __proto__);*/
+
+	/*let a;
+	{a} = {a: 1};
+	console.log(a);// Uncaught SyntaxError: Unexpected token =*/
+
+	let a;
+	({a} = {a: 1});
+	console.log(a);// 1
+</script>
